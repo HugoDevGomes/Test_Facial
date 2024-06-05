@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Face Recognition App</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Reconhecimento Facial DataWise</h1>
+        <div class="frame-container">
+            <img src="/video_feed" id="video-feed" alt="Video Feed">
+        </div>
+        <div id="login-info" class="info-box">
+            <div id="login-details">
+                <div>Nome: <span id="login-name"></span></div>
+                <div>Data Hora: <span id="login-timestamp"></span></div>
+            </div>
+            <div id="register-details" class="info-box">
+                <label for="register-name">Name: </label>
+                <input type="text" id="register-name">
+                <button id="register-ok" onclick="confirmRegister()">Ok</button>
+            </div>
+        </div>
+        <div class="button-container">
+            <button class="btn" onclick="login()">Login</button>
+            <button class="btn" onclick="showRegisterInput()">Register New User</button>
+        </div>
+    </div>
+    <script src="/static/scripts.js"></script>
+    <script>
+        window.onload = function() {
+            fetch('/last_login')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.name && data.timestamp) {
+                        document.getElementById('login-name').textContent = data.name;
+                        document.getElementById('login-timestamp').textContent = data.timestamp;
+                        document.getElementById('login-info').style.display = 'block';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error fetching last login:', error);
+                });
+        };
+    </script>
+</body>
+</html>
