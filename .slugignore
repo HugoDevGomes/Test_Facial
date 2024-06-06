@@ -1,4 +1,8 @@
-*.log
-__pycache__
-instance
-uploads
+venv/
+__pycache__/
+*.pyc
+.DS_Store
+*.sqlite3
+*.db
+static/
+logs.db
