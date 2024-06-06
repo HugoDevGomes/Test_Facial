@@ -1,5 +1,5 @@
 # Use uma imagem base de Python mínima
-FROM python:3.8-slim
+FROM python:3.10-slim
 
 # Instale dependências do sistema para pacotes Python
 RUN apt-get update && apt-get install -y \
