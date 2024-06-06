@@ -7,8 +7,12 @@ RUN apt-get update && apt-get install -y \
     libpq-dev \
     libssl-dev \
     libffi-dev \
-    libjpeg-dev\
-    && apt-get clean
+    libjpeg-dev \
+    cmake \
+    libboost-python1.67-dev \
+    libboost-system1.67-dev \
+    && apt-get clean \
+    && pip install --upgrade pip
 
 # Defina o diretório de trabalho dentro do container
 WORKDIR /app
