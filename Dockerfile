@@ -9,8 +9,8 @@ RUN apt-get update && apt-get install -y \
     libffi-dev \
     libjpeg-dev \
     cmake \
-    libboost-python1.67-dev \
-    libboost-system1.67-dev \
+    libboost-python-dev \
+    libboost-system-dev \
     && apt-get clean \
     && pip install --upgrade pip
 
