@@ -9,6 +9,8 @@ RUN apt-get update && apt-get install -y \
     libffi-dev \
     libjpeg-dev \
     cmake \
+    curl \
+    libcurl4-openssl-dev \
     libboost-python-dev \
     libboost-system-dev \
     && apt-get clean \
