@@ -10,3 +10,7 @@
 "venv/" 
 ".env" 
 "instance/" 
+*.py[cod]
+.idea/
+*.log
+logs.db
